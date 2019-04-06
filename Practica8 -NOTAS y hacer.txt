@@ -1,0 +1,67 @@
+*PROCEDIMIENTO ALMACENADO*
+create procedure ReporteAleatorio
+(@valor1 int)
+as
+begin
+	declare @valor2 varchar(100)
+	select @valor2
+	set@valor2 ='hola'
+
+	select @valor2
+
+	if@valor1>0 then
+	begin
+
+//Para mandarlos a llamar
+execute ReporteAleatorio 1
+
+*FUNCIÓN* (EN LUGAR DE LAS CONSULTAS)
+create function fnSuma(@v1 int, @v2 int)
+returns int
+as
+begin
+	RETURN @v1 + @v2
+end
+
+select dbo.fnSuma(9,114)
+
+create function fnEmp1()
+returns table
+as
+	RETURN select *from Empleado
+end
+
+select * from fnEmpl()
+
+*TRIGGERS*
+al pendiente de la tabla de qu haga las funciones de insert, delete o update
+es como un listerner que se encarga de revisar en cada momento de que se ejecute una función
+se puede ejecutar antes, en lugar de o despues de realizar la función
+
+create trigger tr_insert
+on InventarioAlmacenProductos
+for|instead|after insert|update|delete|
+as
+begin
+	select*
+	from INSERTED
+
+	select*
+	from deleted
+end
+
+*QUERYDINAMICO*
+declare @valor1 int=1
+declare@statement nvarchar(MAX) ='select * from Empleado where Numero Empleado'
+print @statement
+execute sp_executesql_@statement
+
+--------------------------------
+PRACTICA 8			|
+2 triggers			|
+10 SP (1 por cada reporte)	|
+1 funcion			|
+1 Querydinamico			|
+--------------------------------
+
+crear un trigger after insert para que se agreguen los datos antes del insert cuando ya tenemos los datos del evento
