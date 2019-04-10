@@ -6,7 +6,7 @@ mPrecio money not null,
 iIdentificador integer not null primary key)
 
 create table Cliente(
-vApellMat varchar (50) not null,
+vApellido varchar (50) not null,
 vNomCliente varchar (50) not null,
 iIdCliente integer not null primary key)
 
