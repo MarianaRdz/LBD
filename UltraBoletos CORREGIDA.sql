@@ -2,19 +2,19 @@ create database UltraBoletos
 use UltraBoletos
 
 create table Boleto(
-mPrecio money not null,
-iIdentificador integer not null primary key)
+iIdentificador integer not null primary key,
+mPrecio money not null)
 
 create table Cliente(
-vApellido varchar (50) not null,
+iIdCliente nteger not null primary key,
 vNomCliente varchar (50) not null,
-iIdCliente integer not null primary key)
+vApellido varchar (50) not null)
 
 create table Empleado(
 iId_Emp integer not null primary key,
 vNomEmp varchar (50) not null,
-vApMat varchar (50) not null,
-vApPat varchar (50) not null)
+vApPat varchar (50) not null,
+vApMat varchar (50) not null)
 
 create table Localidad(
 iIdLocal integer NOT NULL primary key,
@@ -22,19 +22,17 @@ vNomLocalidad varchar (50) not null,
 iIdDirección integer)
 
 create table Evento(
+iIdEvento integer not null primary key,
 dDiaEvento date not null,
 vTipoEvento varchar (50) not null,
 vLugar varchar (50),
-iIdEvento integer not null primary key,
-tHoraEvento time not null,
-vNombre varchar(50) not null)
+tHoraEvento time not null)
 
 create table Ventas(
 iIdVenta integer not null primary key,
 dDiaVenta date,
 tHoraVenta time,
 mPago money,
-iProducto integer,
 vVenta varchar (50))
 
 create table Dirección(
