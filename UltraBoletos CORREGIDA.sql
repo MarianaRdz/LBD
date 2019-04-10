@@ -7,7 +7,7 @@ iIdentificador integer not null primary key)
 
 create table Cliente(
 vApellMat varchar (50) not null,
-vApellPat varchar (50) not null,
+vNomCliente varchar (50) not null,
 iIdCliente integer not null primary key)
 
 create table Empleado(
@@ -19,7 +19,7 @@ vApPat varchar (50) not null)
 create table Localidad(
 iIdLocal integer NOT NULL primary key,
 vNomLocalidad varchar (50) not null,
-iIdDirección integer)
+iIdDirecciÃ³n integer)
 
 create table Evento(
 dDiaEvento date not null,
@@ -37,7 +37,7 @@ mPago money,
 iProducto integer,
 vVenta varchar (50))
 
-create table Dirección(
+create table DirecciÃ³n(
 iIdDirecc integer NOT NULL primary key,
 vColonia varchar (50),
 vMunicipio varchar(50),
