@@ -1,5 +1,0 @@
-hacer 10 vistas de los reportes
-1 subconsulta
-create view hjsjkdhfhsks as > hacerlo 10 veces
-with
-select()
